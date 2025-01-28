@@ -6,7 +6,10 @@ body {
   gap: 3.125rem;
 }
 
-p, h1, h2, h3 {
+p,
+h1,
+h2,
+h3 {
   margin: 0px;
 }
 
@@ -19,7 +22,7 @@ main {
   display: grid;
   max-width: 62.5rem;
   width: 100%;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   margin: 0 auto;
   position: relative;
 }
@@ -38,7 +41,6 @@ main {
 
 .links a:hover {
   border: 2px solid red;
-  
 }
 
 .links a {
@@ -52,22 +54,26 @@ main {
   border: 2px solid white;
 }
 
+.bicicleta {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
 
 .nimbus {
-    background: white;
-    line-height: 1;
-    border-radius: 8px;
-    grid-column: 1;
-    text-align: right;
-    padding: 2.5rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1rem;
+  background: white;
+  line-height: 1;
+  border-radius: 8px;
+  grid-column: 1;
+  text-align: right;
+  padding: 2.5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
 }
 .nimbus::before {
-  content: '';
+  content: "";
   display: block;
   height: 4px;
   width: 3.75rem;
@@ -81,11 +87,6 @@ main {
 .nimbus h2 {
   font-size: 2rem;
   font-weight: 600;
-}
-
-.imgbicicleta {
-  grid-column: 2 / 3;
-  max-width: 100%;
 }
 
 .imgbicicleta img {
@@ -108,41 +109,40 @@ main {
   background-color: #900;
 }
 
-.vantagens{
-    display: flex;
-    text-align: right;
-    flex-direction: column;
-    justify-content: center;
+.vantagens-lista {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  padding: 2.5rem;
+}
+.caracteristica h1 {
+  background-image: url(./img/onda.svg);
+  color: #c6c6c6;
+  font-size: 4rem;
+  padding: 2.5rem;
 }
 
-.vantagens h1{
-    background-image: url(./img/onda.svg);
-    color: #c6c6c6;
-    font-size: 4rem;
-    padding: 2.5rem;
+.caracteristica {
+  border-radius: 8px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 50%);
 }
-
-.caracteristica{
-    background-color: white;
-    padding: 2.5rem;
-    border-radius: 8px;
-    display: grid;
-    justify-content: center;
+.caracteristicas-item {
+  width: 21, 875rem;
+  position: relative;
+  line-height: 1;
+  padding-left: 30px;
+  padding: 32px;
+  border-left: 4px solid transparent;
 }
-.caracteristicas-item{
-    width: 21,875rem;
-    position: relative;
-    line-height: 1;
-    padding-left: 30px;
-    padding: 32px;
-    border-left: 4px solid transparent;
+.caracteristicas-item img {
+  position: absolute;
+  left: 0px;
+  top: 29px;
 }
-.caracteristicas-item img{
-    position: absolute;
-    left: 0px;
-    top: 29px;
-}
-.caracteristica .caracteristicas-item:nth-child(odd){
+.caracteristica .caracteristicas-item:nth-child(odd) {
   background-color: #f7f7f7;
 }
 
@@ -150,9 +150,41 @@ main {
   border-left: 4px solid #e21;
 }
 
-
-footer{
-    background-color: white;
+footer {
+  background-color: white;
+  text-align: center;
+  padding: 0.5rem;
+}
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  .caracteristica h1 {
+    font-size: 3rem;
     text-align: center;
-    padding: 0.5rem;
+  }
+  .caracteristica {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+  }
+  .imgbicicleta img {
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .links {
+    flex-wrap: wrap;
+  }
+  .bicicleta {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+  .nimbus {
+    width: calc(100% - 5rem);
+    padding: 2.5rem;
+  }
 }
